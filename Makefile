@@ -12,8 +12,6 @@
 PREFIX	:=${HOME}/opt/$(shell uname -m)
 BINDIR	=${PREFIX}/bin
 
-TEMPLATES:=$(wildcard t_*)
-
 TARGETS	=all clean distclean clobber check install uninstall tags
 TARGET	=all
 
@@ -23,13 +21,11 @@ SUBDIRS	=
 
 CC	=ccache gcc4 -march=i686 -std=gnu99
 DEFS	=-D_FORTIFY_SOURCE=2
-DEFS	+=-DHAVE_READLINE=1
 OPT	=-Os
 INCS	=-I.
 CFLAGS	=${OPT} -Wall -Wextra -Werror -pedantic -pipe -g ${DEFS} ${INCS}
 LDFLAGS	=-g
 LDLIBS	=-lSegFault
-LDLIBS	+=-lreadline -ltermcap
 
 all::	arglist
 

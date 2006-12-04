@@ -4,7 +4,7 @@
  *------------------------------------------------------------------------
  * Author:   tf135c (James Reynolds)
  * Filename: gcc-compat.h
- * Created:  2006-12-04 13:48:18
+ * Created:  2006-12-04 13:57:25
  *------------------------------------------------------------------------
  */
 
@@ -40,9 +40,12 @@
 #  define _nonnull(l)	__attribute__((nonnull l))
 #  define _noreturn	__attribute__((__noreturn__))
 #  define _packed	__attribute__((packed))
+#  define _pure		__attribute__((pure))
 #  define _printf(f,v)	__attribute__((format(printf,f,v)))
 #  define _regparm	__attribute__((__regparm__(3)))
 #  define _scanf(f,v)	__attribute__((format(scanf,f,v)))
+#  define _sentinel(n)	__attribute__((sentinel(n)))
+#  define _sentinel0	_sentinel(0)
 #  define _stdcall	__attribute__((stdcall))
 #  define _unused	__attribute__((unused))
 #  define _used		__attribute__((used))
@@ -61,7 +64,10 @@
 #  define _noreturn
 #  define _packed
 #  define _printf(f,v)	/* You are on your own, so deskcheck carefully!	*/
+#  define _pure
 #  define _regparm
+#  define _sentinel(n)
+#  define _sentinel0	_sentinel(0)
 #  define _scanf(f,v)	/* You are on your own, so deskcheck carefully!	*/
 #  define _stdcall
 #  define _unused
