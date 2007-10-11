@@ -19,7 +19,7 @@ SUBDIRS	=
 
 .PHONY:	${TARGETS} ${SUBDIRS}
 
-CC	=ccache gcc4 -march=i686 -std=gnu99
+CC	=ccache gcc -m32 -std=gnu99 -D_FORTIFY_SOURCE=2
 DEFS	=-D_FORTIFY_SOURCE=2
 OPT	=-Os
 INCS	=-I.
