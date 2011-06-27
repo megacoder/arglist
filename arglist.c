@@ -44,7 +44,7 @@ process(
 		if( !argv[ argc ] )	{
 			break;
 		}
-		printf( "  argv[ %3d ] = '%s'\n", argc, argv[ argc ] );
+		printf( "  argv[ %3ld ] = '%s'\n", (long) argc, argv[ argc ] );
 	}
 	va_end( ap );
 	argv[ argc ] = NULL;
@@ -97,7 +97,9 @@ main(
 		"/bin/echo",
 		"echo",
 		"this",
-		"sucks",
+		"is",
+		"a",
+		"test.",
 		NULL
 	);
 	/*								*/
